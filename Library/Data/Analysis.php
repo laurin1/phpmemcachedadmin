@@ -97,7 +97,8 @@ class Library_Data_Analysis
     public static function stats($stats)
     {
         if (! is_array($stats) || (count($stats) == 0)) {
-            return false;
+	        /** @noinspection PhpIncompatibleReturnTypeInspection */
+	        return false;
         }
 
         # Command set()

@@ -288,7 +288,8 @@ class Library_Command_Server implements Library_Command_Interface
         if (($string = $this->exec('get ' . $key, $server, $port))) {
             $string = preg_replace('/^VALUE ' . preg_quote($key, '/') . '[0-9 ]*\r\n/', '', $string);
             if (ord($string[0]) == 0x78 && in_array(ord($string[1]), array(0x01, 0x5e, 0x9c, 0xda))) {
-                return gzuncompress($string);
+	            /** @noinspection PhpComposerExtensionStubsInspection */
+	            return gzuncompress($string);
             }
             return $string;
         }

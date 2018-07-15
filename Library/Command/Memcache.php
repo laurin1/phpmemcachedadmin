@@ -289,7 +289,8 @@ class Library_Command_Memcache implements Library_Command_Interface
      */
     function search($server, $port, $search, $level = false, $more = false)
     {
-        throw new Exception('PECL Memcache does not support search function, use Server instead');
+	    /** @noinspection PhpUnhandledExceptionInspection */
+	    throw new Exception('PECL Memcache does not support search function, use Server instead');
     }
 
     /**
@@ -304,6 +305,7 @@ class Library_Command_Memcache implements Library_Command_Interface
      */
     function telnet($server, $port, $command)
     {
+    	   /** @noinspection PhpUnhandledExceptionInspection */
         throw new Exception('PECL Memcache does not support telnet, use Server instead');
     }
 }

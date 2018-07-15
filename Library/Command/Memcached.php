@@ -39,7 +39,8 @@ class Library_Command_Memcached implements Library_Command_Interface
         self::$_ini = Library_Configuration_Loader::singleton();
 
         # Initializing
-        self::$_memcache = new Memcached();
+	    /** @noinspection PhpDisabledExtensionStubsInspection */
+	    self::$_memcache = new Memcached();
     }
 
     /**
@@ -102,7 +103,8 @@ class Library_Command_Memcached implements Library_Command_Interface
      */
     public function slabs($server, $port)
     {
-        throw new Exception('PECL Memcache does not support slabs stats, use Server or Memcache instead');
+	    /** @noinspection PhpUnhandledExceptionInspection */
+	    throw new Exception('PECL Memcache does not support slabs stats, use Server or Memcache instead');
     }
 
     /**
@@ -117,6 +119,7 @@ class Library_Command_Memcached implements Library_Command_Interface
      */
     public function items($server, $port, $slab)
     {
+    	   /** @noinspection PhpUnhandledExceptionInspection */
         throw new Exception('PECL Memcache does not support slabs items stats, use Server or Memcache instead');
     }
 
@@ -267,6 +270,7 @@ class Library_Command_Memcached implements Library_Command_Interface
      */
     function search($server, $port, $search, $level = false, $more = false)
     {
+    	   /** @noinspection PhpUnhandledExceptionInspection */
         throw new Exception('PECL Memcached does not support search function, use Server instead');
     }
 
@@ -282,6 +286,7 @@ class Library_Command_Memcached implements Library_Command_Interface
      */
     function telnet($server, $port, $command)
     {
+    	   /** @noinspection PhpUnhandledExceptionInspection */
         throw new Exception('PECL Memcached does not support telnet, use Server instead');
     }
 }
